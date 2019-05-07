@@ -1,0 +1,84 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "StreamARN": {
+                    "description": "The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.",
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "pattern": "arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+",
+                    "type": "string"
+                },
+                "StreamName": {
+                    "description": "The name of the stream that you want to add the tag or tags to.",
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_.-]+",
+                    "type": "string"
+                },
+                "Tags": {
+                    "description": "A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 256,
+                                "minLength": 0,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "minItems": 1,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "Tags"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

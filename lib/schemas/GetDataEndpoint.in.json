@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "APIName": {
+                    "description": "The name of the API action for which to get an endpoint.",
+                    "enum": [
+                        "PUT_MEDIA",
+                        "GET_MEDIA",
+                        "LIST_FRAGMENTS",
+                        "GET_MEDIA_FOR_FRAGMENT_LIST",
+                        "GET_HLS_STREAMING_SESSION_URL"
+                    ],
+                    "type": "string"
+                },
+                "StreamARN": {
+                    "description": "The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. ",
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "pattern": "arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+",
+                    "type": "string"
+                },
+                "StreamName": {
+                    "description": "The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.",
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_.-]+",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "APIName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

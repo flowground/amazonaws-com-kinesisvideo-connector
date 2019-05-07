@@ -1,0 +1,78 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "MaxResults": {
+                    "description": "The maximum number of streams to return in the response. The default is 10,000.",
+                    "maximum": 10000,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "NextToken": {
+                    "description": "If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.",
+                    "maxLength": 512,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "StreamNameCondition": {
+                    "description": "Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. ",
+                    "properties": {
+                        "ComparisonOperator": {
+                            "description": "A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.",
+                            "enum": [
+                                "BEGINS_WITH"
+                            ],
+                            "type": "string"
+                        },
+                        "ComparisonValue": {
+                            "description": "A value to compare.",
+                            "maxLength": 256,
+                            "minLength": 1,
+                            "pattern": "[a-zA-Z0-9_.-]+",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
