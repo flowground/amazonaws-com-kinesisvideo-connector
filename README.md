@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) Amazon Kinesis Video Streams MSP Connector
+# ![LOGO](logo.png) Amazon Kinesis Video Streams **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the Amazon Kinesis Video Streams API (version 2017-09-30).
+A generated **flow**ground connector for the Amazon Kinesis Video Streams API (version 2017-09-30).
 
 Generated from: https://kinesisvideo.amazonaws.com/<br/>
-Generated at: 2019-05-07T11:16:12+03:00
+Generated at: 2019-05-07T17:35:52+03:00
 
 ## API Description
 
@@ -149,7 +149,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-kinesisvideo-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-kinesisvideo-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
