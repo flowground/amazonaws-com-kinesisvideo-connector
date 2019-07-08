@@ -1,7 +1,7 @@
 {
     "name": "amazonaws-com-kinesisvideo-connector",
     "version": "2017.0.0",
-    "description": "<p/>",
+    "description": "",
     "main": "component.json",
     "dependencies": {
         "elasticio-node": "0.0.9",
